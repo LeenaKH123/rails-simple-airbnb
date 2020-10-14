@@ -1,0 +1,18 @@
+<div>
+<h2><%= link_to 'Add Flat', new_flat_path(@flat) %></h2>
+</div>
+
+<%@flats.each do |flat|%>
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="https://images.unsplash.com/photo-1464890100898-a385f744067f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80" alt="Card image cap">
+  <div class="card-body"> 
+    <h5 class="card-title"><%= flat.name%></h5>
+    <p class="card-text"><%= flat.description%></p>
+    <p> <%= link_to 'More info', flat %></p>
+    <p><%= link_to 'Update', edit_flat_path(flat) %></p>
+    <p><%= link_to 'Destroy', flat, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <p> </p>
+  </div>
+</div>
+<% end %>
+
